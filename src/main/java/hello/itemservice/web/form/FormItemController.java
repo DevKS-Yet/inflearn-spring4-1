@@ -31,8 +31,10 @@ public class FormItemController {
         return "form/item";
     }
 
+    // 타임리프가 지원하는 폼 기능을 사용할려면 모델로 item을 넘겨줘야함
     @GetMapping("/add")
-    public String addForm() {
+    public String addForm(Model model) {
+        model.addAttribute("item", new Item());
         return "form/addForm";
     }
 
